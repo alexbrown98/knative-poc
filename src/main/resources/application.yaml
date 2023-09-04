@@ -1,0 +1,7 @@
+knative:
+  messageType: ${MESSAGE_TYPE:A}
+  regulator:
+    endpoint:
+      messageTypeA: http://regulator.com/endpointA
+      messageTypeB: http://regulator.com/endpointB
+

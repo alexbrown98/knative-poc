@@ -1,0 +1,18 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+    name: knative-poc-service
+    namespace: knative-poc-app
+
+spec:
+    template:
+        spec:
+            containers:
+              - image: alnicole0103/knative-poc:1.0
+                env:
+                  - name: KAFKA_CLUSTER_URL
+                    value: 6.tcp.eu.ngrok.io:15124
+                  - name: KAFKA_CONSUMER_GROUP_NAME
+                    value: knative-poc-group-1
+                  - name: KAFKA_INPUT_TOPIC
+                    value: knative-poc-topic
